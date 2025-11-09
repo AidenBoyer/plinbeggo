@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://v66qvacuvgte"]
+[gd_scene load_steps=9 format=3 uid="uid://v66qvacuvgte"]
 
 [ext_resource type="Script" uid="uid://bpq0tth1p4xfc" path="res://place.gd" id="1_nxogm"]
 [ext_resource type="PackedScene" uid="uid://dq1xtoh8mmhcs" path="res://ball.tscn" id="2_3253y"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdvr6cpl4fa40" path="res://toolbox.tscn" id="4_u3cyc"]
 [ext_resource type="Texture2D" uid="uid://c6qafmmr3b272" path="res://Bumper.png" id="6_ni31j"]
 [ext_resource type="Script" uid="uid://dob3tsrrfl32w" path="res://Guide.gd" id="6_y2354"]
+[ext_resource type="Script" uid="uid://c2l71vtxhk1x0" path="res://plinkoGenerator2.gd" id="8_xlvrw"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_nxogm")
@@ -23,3 +24,12 @@ script = ExtResource("6_y2354")
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Press M to open Menu"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(325, 112)
+script = ExtResource("8_xlvrw")
+width = 500.0
+height = 500.0
+layers = 5
+topHeight = 200.0
+chamberDepth = 100.0
