@@ -12,12 +12,13 @@ radius = 50.01
 contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1_41u45")
-bounciness = 500
+bounciness = 250
 metadata/type = &"Ball"
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_x8fbi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_41u45")
