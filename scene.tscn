@@ -16,6 +16,7 @@ Bumper = ExtResource("3_3253y")
 Toolbox = ExtResource("4_u3cyc")
 ball_texture = ExtResource("4_m7jmp")
 bumper_texture = ExtResource("6_ni31j")
+grid_size = 50
 
 [node name="scene" type="Node2D" parent="."]
 script = ExtResource("6_y2354")
