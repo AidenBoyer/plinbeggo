@@ -13,15 +13,17 @@ enum Tools {
 @export var bumper_texture: Texture2D
 
 @onready var placing = Guide.new()
+@onready var menu_is_open = false
 
 func _ready():
 	global.tool_selected.connect(select_tool)
 	pass
 
 func _input(event):
-	if event.is_action_pressed("open_menu"):
+	if event.is_action_pressed("open_menu") && !menu_is_open:
 		var menu = Toolbox.instantiate()
 		add_child(menu)
+		menu_is_open = true
 		pass
 	if event.is_action_pressed("click"):
 		if(placing != null):
@@ -58,6 +60,7 @@ func select_tool(tool):
 			placing.type = Tools.BUMPER	
 			pass
 	$scene.add_child(placing.sprite)
+	menu_is_open = false
 	pass
 
 func place_tool(tool):

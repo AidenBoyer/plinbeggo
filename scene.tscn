@@ -18,3 +18,8 @@ bumper_texture = ExtResource("6_ni31j")
 
 [node name="scene" type="Node2D" parent="."]
 script = ExtResource("6_y2354")
+
+[node name="Label" type="Label" parent="scene"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press M to open Menu"
