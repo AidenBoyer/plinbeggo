@@ -1,5 +1,4 @@
 [gd_scene load_steps=9 format=3 uid="uid://v66qvacuvgte"]
-
 [ext_resource type="Script" uid="uid://bpq0tth1p4xfc" path="res://place.gd" id="1_nxogm"]
 [ext_resource type="PackedScene" uid="uid://dq1xtoh8mmhcs" path="res://ball.tscn" id="2_3253y"]
 [ext_resource type="PackedScene" uid="uid://ceinynrd8u265" path="res://bumper.tscn" id="3_3253y"]
