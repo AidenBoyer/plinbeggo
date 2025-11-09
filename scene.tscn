@@ -1,0 +1,20 @@
+[gd_scene load_steps=8 format=3 uid="uid://v66qvacuvgte"]
+
+[ext_resource type="Script" uid="uid://bpq0tth1p4xfc" path="res://place.gd" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://dq1xtoh8mmhcs" path="res://ball.tscn" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://ceinynrd8u265" path="res://bumper.tscn" id="3_3253y"]
+[ext_resource type="Texture2D" uid="uid://bhssbuyf3rnh7" path="res://ball.png" id="4_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://bdvr6cpl4fa40" path="res://toolbox.tscn" id="4_u3cyc"]
+[ext_resource type="Texture2D" uid="uid://c6qafmmr3b272" path="res://Bumper.png" id="6_ni31j"]
+[ext_resource type="Script" uid="uid://dob3tsrrfl32w" path="res://Guide.gd" id="6_y2354"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_nxogm")
+Ball = ExtResource("2_3253y")
+Bumper = ExtResource("3_3253y")
+Toolbox = ExtResource("4_u3cyc")
+ball_texture = ExtResource("4_m7jmp")
+bumper_texture = ExtResource("6_ni31j")
+
+[node name="scene" type="Node2D" parent="."]
+script = ExtResource("6_y2354")

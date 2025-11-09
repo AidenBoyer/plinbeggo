@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdvr6cpl4fa40"]
+
+[ext_resource type="Texture2D" uid="uid://c6qafmmr3b272" path="res://Bumper.png" id="1_hf060"]
+[ext_resource type="Script" uid="uid://c4tqyjjs3y4cq" path="res://toolbox.gd" id="1_hre1t"]
+[ext_resource type="Texture2D" uid="uid://bhssbuyf3rnh7" path="res://ball.png" id="2_hre1t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hre1t")
+ball_texture = ExtResource("2_hre1t")
+bumper_texture = ExtResource("1_hf060")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bumper_button" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -87.0
+offset_right = 54.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_hf060")
+
+[node name="ball_button" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -85.0
+offset_right = -20.0
+offset_bottom = 145.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_hre1t")

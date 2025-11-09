@@ -1,0 +1,65 @@
+extends Node
+
+	
+enum Tools {
+	BALL, BUMPER
+}
+
+
+@export var Ball: PackedScene
+@export var Bumper: PackedScene
+@export var Toolbox: PackedScene
+@export var ball_texture: Texture2D
+@export var bumper_texture: Texture2D
+
+@onready var placing = Guide.new()
+
+func _ready():
+	global.tool_selected.connect(select_tool)
+	pass
+
+func _input(event):
+	if event.is_action_pressed("open_menu"):
+		var menu = Toolbox.instantiate()
+		add_child(menu)
+		pass
+	if event.is_action_pressed("click"):
+		if(placing != null):
+			if(placing.type == Tools.BALL):
+				var new_ball = Ball.instantiate()
+				new_ball.position = get_viewport().get_mouse_position()
+				$scene.add_child(new_ball)
+			if(placing.type == Tools.BUMPER):
+				var new_bumper = Bumper.instantiate()
+				new_bumper.position = get_viewport().get_mouse_position()
+				$scene.add_child(new_bumper)	
+			placing.type = null
+			if(placing.sprite != null):
+				placing.sprite.queue_free()	
+				placing.sprite = null
+		
+		
+func _process(_delta):
+	if(placing.type != null):
+		placing.sprite.scale = Vector2(0.5, 0.5)
+		placing.sprite.position = get_viewport().get_mouse_position()
+	
+func select_tool(tool):
+	
+	match tool:
+		Tools.BALL:
+			placing.sprite = Sprite2D.new()
+			placing.sprite.texture = ball_texture
+			placing.type = Tools.BALL
+			pass
+		Tools.BUMPER:
+			placing.sprite = Sprite2D.new()
+			placing.sprite.texture = bumper_texture
+			placing.type = Tools.BUMPER	
+			pass
+	$scene.add_child(placing.sprite)
+	pass
+
+func place_tool(tool):
+	pass
+	
