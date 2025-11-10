@@ -14,6 +14,7 @@ enum Tools {
 @export var grid_size : int
 @onready var placing = Guide.new()
 @onready var menu_is_open = false
+@onready var frozen = true
 
 var placement_position : Vector2
 func _ready():
@@ -31,6 +32,8 @@ func _input(event):
 			if(placing.type == Tools.BALL):
 				var new_ball = Ball.instantiate()
 				new_ball.position = placement_position
+				if(frozen):
+					new_ball.get_child(0).freeze = true
 				$scene.add_child(new_ball)
 			if(placing.type == Tools.BUMPER):
 				var new_bumper = Bumper.instantiate()
@@ -40,10 +43,24 @@ func _input(event):
 			if(placing.sprite != null):
 				placing.sprite.queue_free()	
 				placing.sprite = null
-		
+	if event.is_action_pressed("release"):
+		if(frozen):
+			for child in $scene.get_children():
+				if(child.get_child(0) is RigidBody2D):
+					child.get_child(0).freeze = false
+			frozen = false
+		else: if(!frozen):
+			for child in $scene.get_children():
+				
+				if(child.get_child(0) is RigidBody2D):
+					child.get_child(0).freeze = true
+			frozen = true
+	if event.is_action_pressed("reset"):
+		for child in $scene.get_children():
+			child.queue_free()
 		
 func _process(_delta):
-	mouse_grid_position()
+	set_placement_position()
 	
 	
 	if(placing.type != null):
@@ -68,7 +85,8 @@ func select_tool(tool):
 	menu_is_open = false
 	pass
 
-
-func mouse_grid_position():
-	placement_position= (get_viewport().get_mouse_position().snapped(Vector2(grid_size, grid_size)))
-	
+#snap to grid 
+func set_placement_position():
+	placement_position = get_viewport().get_mouse_position()
+	#placement_position= (get_viewport().get_mouse_position().snapped(Vector2(grid_size, grid_size)))
+	#
