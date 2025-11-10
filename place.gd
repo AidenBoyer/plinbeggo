@@ -75,8 +75,6 @@ func select_tool(tool):
 		Tools.BALL:
 			var glass_ball_sprite = Sprite2D.new()
 			glass_ball_sprite.texture = ball_texture
-			var NoRotationScript = load("res://stopRotations.gd")
-			glass_ball_sprite.set_script(NoRotationScript)
 			
 			var guy_sprite = Sprite2D.new()
 			guy_sprite.texture = ball_guy_texture

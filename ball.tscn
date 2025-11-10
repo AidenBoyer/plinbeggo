@@ -45,10 +45,11 @@ shape = SubResource("CircleShape2D_41u45")
 
 [node name="BumperNoise" type="AudioStreamPlayer2D" parent="RigidBody2D"]
 stream = ExtResource("3_01kih")
+volume_db = 6.842
 
 [node name="DeathNoise" type="AudioStreamPlayer2D" parent="RigidBody2D"]
 stream = ExtResource("4_1iob0")
-volume_db = 1.0
+volume_db = 2.368
 attenuation = 6.0628467
 
 [node name="RandomNoisePlayer" type="AudioStreamPlayer2D" parent="RigidBody2D"]

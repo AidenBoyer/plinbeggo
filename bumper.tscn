@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceinynrd8u265"]
 
-[ext_resource type="Texture2D" uid="uid://c6qafmmr3b272" path="res://Bumper.png" id="1_hrt4a"]
+[ext_resource type="Texture2D" uid="uid://bjjpr8bqhko5a" path="res://images/bumper.png" id="1_hrt4a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrt4a"]
 radius = 50.01
@@ -12,7 +12,7 @@ metadata/type = &"Bumper"
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_hrt4a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

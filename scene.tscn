@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bdvr6cpl4fa40" path="res://toolbox.tscn" id="4_u3cyc"]
 [ext_resource type="Texture2D" uid="uid://8n5m47m1eu4h" path="res://images/glass_ball_reflections.png" id="5_73fnb"]
 [ext_resource type="Texture2D" uid="uid://bvhu5rwfpj3tq" path="res://images/glass_ball_stick_guy.png" id="6_5juve"]
-[ext_resource type="Texture2D" uid="uid://c6qafmmr3b272" path="res://Bumper.png" id="6_ni31j"]
 [ext_resource type="Script" uid="uid://dob3tsrrfl32w" path="res://Guide.gd" id="6_y2354"]
+[ext_resource type="Texture2D" uid="uid://bjjpr8bqhko5a" path="res://images/bumper.png" id="7_73fnb"]
 [ext_resource type="Script" uid="uid://c2l71vtxhk1x0" path="res://plinkoGenerator2.gd" id="8_xlvrw"]
 
 [node name="Main" type="Node"]
@@ -17,7 +17,7 @@ Bumper = ExtResource("3_3253y")
 Toolbox = ExtResource("4_u3cyc")
 ball_texture = ExtResource("5_73fnb")
 ball_guy_texture = ExtResource("6_5juve")
-bumper_texture = ExtResource("6_ni31j")
+bumper_texture = ExtResource("7_73fnb")
 grid_size = 50
 
 [node name="scene" type="Node2D" parent="."]
