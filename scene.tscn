@@ -23,11 +23,6 @@ grid_size = 50
 [node name="scene" type="Node2D" parent="."]
 script = ExtResource("6_y2354")
 
-[node name="Label" type="Label" parent="scene"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Press M to open Menu"
-
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(325, 112)
 script = ExtResource("8_xlvrw")
@@ -36,3 +31,10 @@ height = 500.0
 layers = 5
 topHeight = 200.0
 chamberDepth = 100.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 173.0
+offset_bottom = 23.0
+text = "Press M to open Menu
+Press R to Release / Unrelease
+Press F to Reset"
