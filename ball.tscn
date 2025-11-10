@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq1xtoh8mmhcs"]
+[gd_scene load_steps=11 format=3 uid="uid://dq1xtoh8mmhcs"]
 
 [ext_resource type="Script" uid="uid://cogtuyb0m0iho" path="res://ball_physics.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://bhssbuyf3rnh7" path="res://ball.png" id="1_x8fbi"]
+[ext_resource type="AudioStream" uid="uid://nrt8dre4pnb5" path="res://sound_effects/bring1.mp3" id="3_01kih"]
+[ext_resource type="AudioStream" uid="uid://enhjyo3f8gpr" path="res://sound_effects/argh1.mp3" id="3_gchj4"]
+[ext_resource type="AudioStream" uid="uid://c2u2gbgsc3lx" path="res://sound_effects/scream2.mp3" id="4_1iob0"]
+[ext_resource type="AudioStream" uid="uid://bor5g0jb3lnuo" path="res://sound_effects/up1.mp3" id="4_01kih"]
+[ext_resource type="AudioStream" uid="uid://bs5qu83hcgg8c" path="res://sound_effects/eh1.mp3" id="5_1iob0"]
+[ext_resource type="AudioStream" uid="uid://csnrnnu6c2cs7" path="res://sound_effects/urgh1.mp3" id="6_0jqm0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_41u45"]
 radius = 50.01
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nidkk"]
+streams_count = 4
+stream_0/stream = ExtResource("3_gchj4")
+stream_1/stream = ExtResource("4_01kih")
+stream_2/stream = ExtResource("5_1iob0")
+stream_3/stream = ExtResource("6_0jqm0")
 
 [node name="Ball" type="Node2D"]
 
@@ -22,3 +35,19 @@ texture = ExtResource("1_x8fbi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_41u45")
+
+[node name="BumperNoise" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+stream = ExtResource("3_01kih")
+
+[node name="DeathNoise" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+stream = ExtResource("4_1iob0")
+volume_db = 1.0
+attenuation = 6.0628467
+
+[node name="RandomNoisePlayer" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+stream = SubResource("AudioStreamRandomizer_nidkk")
+max_polyphony = 10
+playback_type = 2
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="RigidBody2D"]
+rect = Rect2(-25, -25, 50, 50)
