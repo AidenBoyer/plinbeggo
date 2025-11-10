@@ -10,6 +10,7 @@ enum Tools {
 @export var Bumper: PackedScene
 @export var Toolbox: PackedScene
 @export var ball_texture: Texture2D
+@export var ball_guy_texture: Texture2D
 @export var bumper_texture: Texture2D
 @export var grid_size : int
 @onready var placing = Guide.new()
@@ -47,15 +48,24 @@ func _process(_delta):
 	
 	
 	if(placing.type != null):
-		placing.sprite.scale = Vector2(0.25, 0.25)
+		placing.sprite.scale = Vector2(0.1, 0.1)
 		placing.sprite.position = placement_position
 	
 func select_tool(tool):
 	
 	match tool:
 		Tools.BALL:
-			placing.sprite = Sprite2D.new()
-			placing.sprite.texture = ball_texture
+			var glass_ball_sprite = Sprite2D.new()
+			glass_ball_sprite.texture = ball_texture
+			var NoRotationScript = load("res://stopRotations.gd")
+			glass_ball_sprite.set_script(NoRotationScript)
+			
+			var guy_sprite = Sprite2D.new()
+			guy_sprite.texture = ball_guy_texture
+			
+			placing.sprite = Node2D.new()
+			placing.sprite.add_child(glass_ball_sprite)
+			placing.sprite.add_child(guy_sprite)
 			placing.type = Tools.BALL
 			pass
 		Tools.BUMPER:

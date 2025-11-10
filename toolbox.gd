@@ -4,8 +4,7 @@ extends Control
 enum Tools {
 	BALL, BUMPER
 }
-@export var ball_texture : Texture2D
-@export var bumper_texture: Texture2D
+
 var scene
 
 # Called when the node enters the scene tree for the first time.

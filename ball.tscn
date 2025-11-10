@@ -1,16 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq1xtoh8mmhcs"]
+[gd_scene load_steps=13 format=3 uid="uid://dq1xtoh8mmhcs"]
 
 [ext_resource type="Script" uid="uid://cogtuyb0m0iho" path="res://ball_physics.gd" id="1_41u45"]
-[ext_resource type="Texture2D" uid="uid://bhssbuyf3rnh7" path="res://ball.png" id="1_x8fbi"]
+[ext_resource type="Texture2D" uid="uid://8n5m47m1eu4h" path="res://images/glass_ball_reflections.png" id="2_1iob0"]
+[ext_resource type="Texture2D" uid="uid://bvhu5rwfpj3tq" path="res://images/glass_ball_stick_guy.png" id="3_0jqm0"]
 [ext_resource type="AudioStream" uid="uid://nrt8dre4pnb5" path="res://sound_effects/bring1.mp3" id="3_01kih"]
 [ext_resource type="AudioStream" uid="uid://enhjyo3f8gpr" path="res://sound_effects/argh1.mp3" id="3_gchj4"]
+[ext_resource type="Script" uid="uid://cyaujquy6fr4d" path="res://stopRotations.gd" id="3_nidkk"]
 [ext_resource type="AudioStream" uid="uid://c2u2gbgsc3lx" path="res://sound_effects/scream2.mp3" id="4_1iob0"]
 [ext_resource type="AudioStream" uid="uid://bor5g0jb3lnuo" path="res://sound_effects/up1.mp3" id="4_01kih"]
 [ext_resource type="AudioStream" uid="uid://bs5qu83hcgg8c" path="res://sound_effects/eh1.mp3" id="5_1iob0"]
 [ext_resource type="AudioStream" uid="uid://csnrnnu6c2cs7" path="res://sound_effects/urgh1.mp3" id="6_0jqm0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_41u45"]
-radius = 50.01
+radius = 249.99997
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nidkk"]
 streams_count = 4
@@ -28,12 +30,17 @@ script = ExtResource("1_41u45")
 defaultBounciness = 100
 metadata/type = &"Ball"
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_x8fbi")
+[node name="BallSprite" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_1iob0")
+script = ExtResource("3_nidkk")
+
+[node name="GuySprite" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_0jqm0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.1, 0.1)
 shape = SubResource("CircleShape2D_41u45")
 
 [node name="BumperNoise" type="AudioStreamPlayer2D" parent="RigidBody2D"]
