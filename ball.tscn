@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvhu5rwfpj3tq" path="res://images/glass_ball_stick_guy.png" id="3_0jqm0"]
 [ext_resource type="AudioStream" uid="uid://nrt8dre4pnb5" path="res://sound_effects/bring1.mp3" id="3_01kih"]
 [ext_resource type="AudioStream" uid="uid://enhjyo3f8gpr" path="res://sound_effects/argh1.mp3" id="3_gchj4"]
-[ext_resource type="Script" uid="uid://cyaujquy6fr4d" path="res://stopRotations.gd" id="3_nidkk"]
+[ext_resource type="Script" path="res://stopRotations.gd" id="3_nidkk"]
 [ext_resource type="AudioStream" uid="uid://c2u2gbgsc3lx" path="res://sound_effects/scream2.mp3" id="4_1iob0"]
 [ext_resource type="AudioStream" uid="uid://bor5g0jb3lnuo" path="res://sound_effects/up1.mp3" id="4_01kih"]
 [ext_resource type="AudioStream" uid="uid://bs5qu83hcgg8c" path="res://sound_effects/eh1.mp3" id="5_1iob0"]
@@ -49,7 +49,7 @@ volume_db = 6.842
 
 [node name="DeathNoise" type="AudioStreamPlayer2D" parent="RigidBody2D"]
 stream = ExtResource("4_1iob0")
-volume_db = 2.368
+volume_db = 4.5
 attenuation = 6.0628467
 
 [node name="RandomNoisePlayer" type="AudioStreamPlayer2D" parent="RigidBody2D"]
