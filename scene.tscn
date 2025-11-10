@@ -35,6 +35,6 @@ chamberDepth = 100.0
 [node name="Label" type="Label" parent="."]
 offset_right = 173.0
 offset_bottom = 23.0
-text = "Press M to open Menu
-Press R to Release / Unrelease
-Press F to Reset"
+text = "Press T to open the Tool Box
+Press F to toggle Freeze
+Press R to Reset"
