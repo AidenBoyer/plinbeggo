@@ -47,18 +47,19 @@ func _input(event):
 	if event.is_action_pressed("release"):
 		if(frozen):
 			for child in $scene.get_children():
-				if(child.get_child(0) is RigidBody2D):
+				if(child.get_child_count() > 0 && child.get_child(0) is RigidBody2D):
 					child.get_child(0).freeze = false
 			frozen = false
 		else: if(!frozen):
 			for child in $scene.get_children():
 				
-				if(child.get_child(0) is RigidBody2D):
+				if(child.get_child_count() > 0 && child.get_child(0) is RigidBody2D):
 					child.get_child(0).freeze = true
 			frozen = true
 	if event.is_action_pressed("reset"):
 		for child in $scene.get_children():
 			child.queue_free()
+		placing.type = null
 		
 func _process(_delta):
 	set_placement_position()
